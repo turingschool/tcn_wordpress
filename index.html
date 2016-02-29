@@ -29,6 +29,12 @@
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
+		<style>
+			.reveal pre{
+				font-size: .75em;
+			}
+		</style>
+
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
@@ -41,35 +47,43 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section data-markdown>
-					##Welcome
+					# Welcome
 					- Who are you?
 					- What brought you here?
 				</section>
 
 				<section data-markdown>
-					##Welcome
+					## Welcome
 					- Who am I?
 					- What is Turing?
 				</section>
 
 				<section data-markdown>
 					## Tonight
-					- Intro to HTML/CSS/PHP
+					- Intro to HTML - CSS - PHP
 					- How Wordpress uses them
 					- How you can use them
 				</section>
 
 				<section data-markdown>
+					## HTML - CSS - PHP
+					- HTML: Nouns
+					- CSS: Adjectives
+					- PHP: Verbs
+				</section>
+
+				<section data-markdown>
 					## What is HTML?
 					- Hypertext Markup Language
+					- What is on the page
 					- Tags
-					- Structure
 				</section>
 
 				<section data-markdown>
 					## HTML Tags
 					```html
 					&lt;h1&gt;This is a header&lt;/h1&gt;
+					&lt;p&gt;I am a paragraph&lt;/p&gt;
 					```
 				</section>
 
@@ -158,8 +172,12 @@ $sugar = CUP_OF_SUGAR * 3;
 $butter = STICK_OF_BUTTER * 2;
 
 function mix_until_blended($ingredient_1, $ingredient_2) {
-  while(!blended){
-    mix($ingredient_1, $ingredient_2);
+  $mixing_bowl = new Bowl;
+  $mixing_bowl->add_ingredient($ingredient_1);
+  $mixing_bowl->add_ingredient($ingredient_2);
+
+  while(!$mixing_bowl->blended){
+    $mixing_bowl->stir();
   }
 }
 
@@ -177,6 +195,13 @@ mix_until_blended($sugar, $butter);
   ?&gt;&lt;/h1&gt;
   ...
 					```
+					Becomes:
+					```html
+&lt;body&gt;
+  &lt;h1&gt;Welcome to my blog!&lt;/h1&gt;
+	...
+					```
+
 				</section>
 
 				<section data-markdown>
@@ -197,15 +222,15 @@ mix_until_blended($sugar, $butter);
 					## How to customize Wordpress
 					- Make changes to a theme
 					- Themes are in `wp-content/themes`
-					- Home template is `index.php`
 				</section>
 
 				<section data-markdown>
 					## Your chance to make changes
-					- Cloud 9 Setup: bit.ly/cloud9-wordpress
+					- Cloud 9 Setup: [bit.ly/cloud9-wordpress](http://bit.ly/cloud9-wordpress)
+					- Home template: `index.php`
 					- Post template: `single.php`
 					- Page template: `page.php`
-					- w3schools.com
+					- [w3schools.com](http://w3schools.com)
 				</section>
 
 				<section data-markdown>
